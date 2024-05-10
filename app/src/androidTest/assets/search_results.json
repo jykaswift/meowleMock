@@ -1,0 +1,16 @@
+{
+  "groups": [{
+    "title": "К",
+    "cats": [{
+      "id": 17650,
+      "name": "Кицвунг",
+      "description": "",
+      "tags": null,
+      "gender": "unisex",
+      "likes": 0,
+      "dislikes": 0
+    }],
+    "count": 1
+  }],
+  "count": 1
+}
