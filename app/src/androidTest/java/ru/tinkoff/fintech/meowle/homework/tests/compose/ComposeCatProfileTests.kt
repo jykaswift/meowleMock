@@ -1,6 +1,5 @@
 package ru.tinkoff.fintech.meowle.homework.tests.compose
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import com.github.tomakehurst.wiremock.client.WireMock
 import com.github.tomakehurst.wiremock.client.WireMock.equalToJson
 import com.github.tomakehurst.wiremock.client.WireMock.get
 import com.github.tomakehurst.wiremock.client.WireMock.ok
