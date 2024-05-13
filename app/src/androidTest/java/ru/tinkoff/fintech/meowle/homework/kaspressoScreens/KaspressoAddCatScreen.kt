@@ -19,7 +19,7 @@ class KaspressoAddCatScreen: KScreen<KaspressoAddCatScreen>() {
     private val genderTextInputLayout = KTextInputLayout { withId(R.id.til_gender) }
     private val nameEditText = KEditText { withId(R.id.et_name) }
     private val descriptionEditText = KEditText { withId(R.id.cat_description) }
-
+    private val snackbar = KTextView { withText(R.string.add_snackbar_success_message) }
     private val addButton = KButton { withId(R.id.btn_add) }
 
     fun enterName(name: String) {
@@ -38,7 +38,11 @@ class KaspressoAddCatScreen: KScreen<KaspressoAddCatScreen>() {
             Gender.UNISEX -> R.string.gender_unisex
         }
 
-        KTextView { withText(genderText) }.also { it.inRoot { isPlatformPopup() } }.click()
+        val genderItem = KTextView { withText(genderText) }
+        genderItem {
+            inRoot { isPlatformPopup() }
+            click()
+        }
     }
 
     fun clickAddButton() {
@@ -46,6 +50,9 @@ class KaspressoAddCatScreen: KScreen<KaspressoAddCatScreen>() {
     }
 
     fun checkToast(decorView: View?) {
-        KTextView { withText(R.string.add_snackbar_success_message) } .also { it.inRoot { withDecorView { not(decorView) } } }.isDisplayed()
+         snackbar {
+             inRoot { withDecorView { not(decorView) } }
+             isDisplayed()
+         }
     }
 }
